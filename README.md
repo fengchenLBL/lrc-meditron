@@ -2,7 +2,7 @@
 
 This guide provides step-by-step instructions to set up a Conda environment for Meditron, install Meditron, and run inference using the `inference_pipeline.sh` script.
 
-## Request a GPU node with four A40 or A100 (or H100) GPUs with 80GB memory
+## Request a GPU node with four A40 (46GB), or A100 (80GB), or H100 (80GB) GPUs
 * How to specify desired GPU card(s)?
   * via SLURM: https://scienceit-docs.lbl.gov/hpc/systems/einsteinium/
   * via LRC Open OnDemand (OOD) jupyter server: https://lrc-ondemand.lbl.gov/
@@ -82,5 +82,5 @@ nvidia-smi -l
 * 70B model: __Out of GPU Memory__ when running it on a node with four A100 GPUs with 80GB memory
 
 ## 5. Conclusion
-Following these steps, you can successfully set up Meditron, download necessary datasets, and run inference using Meditron-7B. If you encounter any issues, refer to the troubleshooting section or adjust the pipeline parameters accordingly. However, Meditron-70B had Out-of-Memory Issues when running on NVIDIA A100(80GB)
+Following these steps, you can successfully set up Meditron, download necessary datasets, and run inference using Meditron-7B (on A40 and A100 GPUs). If you encounter any issues, refer to the troubleshooting section or adjust the pipeline parameters accordingly. However, Meditron-70B had Out-of-Memory Issues when running on NVIDIA A100(80GB)
 
