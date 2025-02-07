@@ -4,7 +4,8 @@ This guide provides step-by-step instructions to set up a Conda environment for 
 
 ## Request a GPU node with four A100 (or H100) GPUs with 80GB memory
 * How to specify desired GPU card(s)?
-  * https://scienceit-docs.lbl.gov/hpc/systems/einsteinium/
+  * via SLURM: https://scienceit-docs.lbl.gov/hpc/systems/einsteinium/
+  * via LRC Open OnDemand (OOD) jupyter server: https://lrc-ondemand.lbl.gov/
 
 ## 1. Setup Conda Environment for Meditron
 To ensure a clean and isolated environment, create a Conda environment before installing dependencies:
@@ -36,6 +37,8 @@ bash inference_pipeline.sh -b medmcqa -c meditron-7b -s 5 -m 1
 1. **Downloads the `medmcqa` dataset** automatically.
 2. **Downloads the Meditron-7B model weights** from Hugging Face if not already available locally.
 3. **Runs inference using the vLLM engine** to generate responses based on the dataset.
+
+### Example output: [medmcqa-meditron-7b-5-shot.jsonl](medmcqa-meditron-7b-5-shot.jsonl)
 
 ## 4. Troubleshooting
 
