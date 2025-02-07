@@ -68,7 +68,12 @@ If you see an error related to `use_beam_search`:
 # use_beam_search=True  # Comment out or remove this line
 ```
 
-### c) Out-of-Memory Issues for 7B model
+### c) `Evaluation` Error
+If you see an error related to `evaluate.py`:
+* Replace `evaluate.py` with this file [evaluate.py](evaluate.py)
+
+
+### d) Out-of-Memory Issues for 7B model
 Reduce the batch size:
 ```bash
 bash inference_pipeline.sh -b medmcqa -c meditron-7b -s 5 -m 1 -d 8
@@ -78,7 +83,7 @@ Monitor GPU usage with:
 ```bash
 nvidia-smi -l
 ```
-### d) Out-of-Memory Issues for 70B model
+### e) Out-of-Memory Issues for 70B model
 * 70B model: __Out of GPU Memory__ when running it on a node with four A100 GPUs with 80GB memory
 
 ## 5. Conclusion
