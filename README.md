@@ -2,7 +2,7 @@
 
 This guide provides step-by-step instructions to set up a Conda environment for Meditron, install Meditron, and run inference using the `inference_pipeline.sh` script.
 
-## Request a GPU node with four A100 (or H100) GPUs with 80GB memory
+## Request a GPU node with four A40 or A100 (or H100) GPUs with 80GB memory
 * How to specify desired GPU card(s)?
   * via SLURM: https://scienceit-docs.lbl.gov/hpc/systems/einsteinium/
   * via LRC Open OnDemand (OOD) jupyter server: https://lrc-ondemand.lbl.gov/
@@ -25,7 +25,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## 3. Run Inference with Meditron-7B
+## 3. Run Inference with Meditron-7B on A40 or A100 GPUs
 Navigate to the evaluation directory and run the inference pipeline:
 
 ```bash
