@@ -237,7 +237,8 @@ def main(args):
     :param args: argparse.Namespace, the arguments to run the inference pipeline
     """
     partition = INSTRUCTIONS[args.benchmark]['partition']
-    tokenizer = AutoTokenizer.from_pretrained(args.checkpoint)
+    #tokenizer = AutoTokenizer.from_pretrained(args.checkpoint)
+    tokenizer = AutoTokenizer.from_pretrained(args.checkpoint, device_map="auto", torch_dtype="auto")
     logging.info(f'Loaded tokenizer \n\tfrom checkpoint: {args.checkpoint}')
 
     data_obj = benchmark_factory(args.benchmark)
@@ -248,7 +249,9 @@ def main(args):
         "model": args.checkpoint,
         "tokenizer": args.checkpoint,
         "trust_remote_code": True,
-        "max_num_seqs": 1024,
+        #"max_num_seqs": 1024,
+        "max_num_seqs": 512,
+        #"max_num_seqs": 384,
         "tensor_parallel_size": torch.cuda.device_count(),
     }
 
